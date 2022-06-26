@@ -2,7 +2,7 @@
 // Cycle problem using backtracking
  
 class HamiltonianCycle {
-  constructor(graph) {
+  constructor() {
     this.V = 6;
     this.path = [];
     this.cycle = [];
