@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 500;
+}
+
+.title {
+  text-align: center;
+}
+
+#template {
+  margin: 5px 40px;
+}
+
+.card {
+  padding:  10px 20px;
+  border: 1px solid gray;
+}
+
+.card .point {
+  font-weight: 800;
+}
+
+.card .variabel {
+  display: flex;
+  /* grid-column: 2; */
+  gap: 10px;
+}
+.card .variabel .variabel-stage {
+  padding: 10px;
+  border: 1px solid gray;
+}
+
+.card .variabel .wrapper .variabel-point {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: row; */
+}
