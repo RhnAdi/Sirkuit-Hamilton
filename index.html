@@ -5,12 +5,78 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.17.0/dist/full.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
   <title>Document</title>
 </head>
-<body>
-  <h1 class="title">UAS MATEMATIKA DISKRIT ( SIRKUIT HAMILTON )</h1>
-  <script src="hamilton.js"></script>
+<body class="bg-light">
+  <!-- Navbar - Start -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container">
+      <a class="navbar-brand text-bold" href="#">Sirkuit Hamilton</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://drive.google.com/drive/u/0/folders/1o_FU4cFy18mAUZegMWV7rFLvKk8V62jl">Docs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Source Code</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container py-5">
+    <div class="alert alert-warning alert-dismissible fade show d-none" role="alert" id="error_alert">
+      <strong>Error!</strong>
+      <span id="error_message"></span>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div class="card bg-white">
+      <div class="mb-3">
+        <label for="paths" class="form-label">Vertices</label>
+        <input id="paths" type="number" class="form-control">
+      </div>
+      <button id="next_button" class="btn btn-dark w-min mb-3">Next <i class="bi bi-arrow-right ms-2"></i></button>
+      <div id="side_container" class="d-none">
+        <div class="d-flex justify-content-between mb-3 align-items-center">
+          <span>Put each side</span>
+          <button id="add_side_button" class="btn btn-dark"><i class="bi bi-plus"></i></button>
+        </div>
+        <div id="side_wrapper">
+        </div>
+        <button id="calculate" class="btn btn-dark mt-3 mb-1">Calculate</button>
+      </div>
+    </div>
+    <div id="summary" class="card bg-white my-3 d-none">
+      <p>Summary :</p>
+      <span>The number of Hamilton circuits in a complete graph with n vertices, including reversals, is
+        equal to (<span id="n">𝒏</span>-1)! :</span>
+      <p id="reveals_cycles" class="fw-bold">0</p>
+      <span>If reversals are not included, the number of Hamilton circuits becomes (<span id="n">𝒏</span>−𝟏)!/2 :</span>
+      <p id="cycles" class="fw-bold">0</p>
+      <div>
+        <span>Circuits :</span>
+        <ul id="circuits_wrapper">
+        </ul>
+      </div>
+      <div>
+        <span>Short Circuit : <span id="short_circuit">0</span>.</span>
+        <br />
+        <span>With a circuit length of <span id="short_length">0</span></span>
+      </div>
+    </div>
+  </div>
+  <!-- Navbar - End -->
+
+
+  <script src="utils/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
